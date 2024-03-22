@@ -7,9 +7,9 @@ export const register = async (req, res) => {
       message: "User created successfully",
     });
   } catch (err) {
-    console.log("Error in Register : ", err);
     res.status(500).json({
       message: "User cant be created, please try again later.",
+      
     });
   }
 };

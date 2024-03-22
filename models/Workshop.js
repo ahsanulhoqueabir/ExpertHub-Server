@@ -1,17 +1,24 @@
 import mongoose from "mongoose";
+// const mongoose = require("mongoose");
 
-const workshopSchema = mongoose.Schema(
+const workshopSchema = new mongoose.Schema(
   {
     title: {
       type: String,
       required: true,
+    },
+    instructor: {
+      type: String,
+    },
+    designation: {
+      type: String,
     },
     description: {
       type: String,
       required: true,
     },
     workshopDate: {
-      type: Date,
+      type: String,
       required: true,
     },
     workshopStartTime: {
@@ -42,10 +49,10 @@ const workshopSchema = mongoose.Schema(
       type: Number,
       required: true,
     },
-    user: {
-      type: mongoose.Schema.Types.ObjectId,
-      ref: "User",
-    },
+    // user: {
+    //   type: mongoose.Schema.Types.ObjectId,
+    //   ref: "User",
+    // },
   },
   {
     timestamps: true,
