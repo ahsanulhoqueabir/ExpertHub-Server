@@ -3,6 +3,8 @@ import express from "express";
 import mongoose from "mongoose";
 import authRoute from "./routes/auth.js";
 import workshopRoute from "./routes/workshops.js";
+import GeneralUserRoute from "./routes/generalUsers.js";
+import beExpert from "./routes/expert.js";
 const port = 5000;
 
 const app = express();
@@ -28,6 +30,8 @@ app.use(express.json());
 app.use(cors(corsOptions));
 app.use("/api/v1/auth", authRoute);
 app.use("/api/v1/workshops", workshopRoute);
+app.use("/api/v1/generalUser", GeneralUserRoute);
+app.use("/api/v1/expert", beExpert);
 
 app.listen(port, () => {
   connection();
