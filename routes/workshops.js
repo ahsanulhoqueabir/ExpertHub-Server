@@ -5,6 +5,7 @@ import {
   getWorkshopById,
   updateWorkshop,
   deleteWorkshop,
+  getTags,
 } from "../controllers/workshopController.js";
 // const createWorkshop = require("../controllers/workshopController");
 
@@ -15,5 +16,6 @@ router.get("/all", getAllWorkshops);
 router.get("/search/:id", getWorkshopById);
 router.patch("/update/:id", updateWorkshop);
 router.delete("/delete/:id", deleteWorkshop);
+router.get("/getTags", getTags);
 
 export default router;

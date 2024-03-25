@@ -63,6 +63,17 @@ const deleteWorkshop = async (req, res) => {
     res.status(500).json({ message: error.message });
   }
 };
+const getTags = async (req, res) => {
+  try {
+    const tags = await Workshop.find().distinct("tags");
+    res.status(200).json({
+      message: "Tags found successfully",
+      data: tags,
+    });
+  } catch (error) {
+    res.status(500).json({ message: "Invalid Route" });
+  }
+};
 
 export {
   createWorkshop,
@@ -70,4 +81,5 @@ export {
   getWorkshopById,
   updateWorkshop,
   deleteWorkshop,
+  getTags,
 };
